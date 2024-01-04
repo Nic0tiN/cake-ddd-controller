@@ -2,6 +2,8 @@
 
 Part of the CakePHP Domain Driven Design Building Blocks suite.
 
+Compatible with CakePHP 4.5 and CakePHP 5.
+
 ## Key Objectives
 - Ease creation of REST(Ful) controller
 - Respect Layered architecture. This plugin takes place in the Infrastructure layer.
