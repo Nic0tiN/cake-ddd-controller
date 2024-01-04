@@ -84,8 +84,8 @@ class RestHandlerComponent extends Component
 
         $variable = Inflector::variable($this->getController()->getName());
 
-        if ($this->getController()->getRequest()->getParam('action') === 'index') {
-            $variable = Inflector::pluralize($variable);
+        if ($this->getController()->getRequest()->getParam('action') !== 'index') {
+            $variable = Inflector::singularize($variable);
         }
 
         return $variable;
@@ -106,7 +106,7 @@ class RestHandlerComponent extends Component
             'View',
             Inflector::pluralize($name),
             'json',
-            $name . 'ResponseDto'
+            Inflector::singularize($name) . 'ResponseDto'
         ]);
         $responseDtoClassName = implode('\\', $responseDtoClassName);
 

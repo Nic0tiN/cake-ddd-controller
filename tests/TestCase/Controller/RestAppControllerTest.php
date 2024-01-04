@@ -3,7 +3,7 @@
 namespace CakeDDD\Test\TestCase\Controller;
 
 use Cake\Http\ServerRequest;
-use CakeDDD\Test\Fixture\Controller\FakeRestController;
+use CakeDDD\Test\Fixture\Controller\FakeRestsController;
 use CakeDDD\Test\Fixture\Domain\Entity\FakeEntity;
 use CakeDDD\Test\Fixture\View\FakeRests\json\FakeCustomResponseDto;
 use PHPUnit\Framework\TestCase;
@@ -154,11 +154,11 @@ class RestAppControllerTest extends TestCase
 
     /**
      * Get controller (subject under test)
-     * @return FakeRestController
+     * @return FakeRestsController
      */
-    private function getController(): FakeRestController
+    private function getController(): FakeRestsController
     {
-        return new FakeRestController(
+        return new FakeRestsController(
             $this->createMock(ServerRequest::class)
         );
     }
