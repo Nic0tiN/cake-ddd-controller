@@ -1,4 +1,4 @@
-# CakePHP Domain Driven Design Controller
+# CakePHP Domain Driven Design - Controller
 
 Part of the CakePHP Domain Driven Design Building Blocks suite.
 

@@ -27,6 +27,9 @@
       "CakeDDD\\Test\\": "tests/"
     }
   },
+  "suggest": {
+    "nic0tin/cake-ddd-repository": "CakePHP Domain Driven Design Building Blocks - Repository pattern"
+  },
   "scripts": {
     "test": "./vendor/bin/phpunit --bootstrap ./tests/bootstrap.php ./tests"
   },
