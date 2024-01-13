@@ -50,6 +50,7 @@ class RestAppControllerTest extends TestCase
         $expectedValue = 'Some serialized value';
 
         $controller = $this->getController();
+        $controller->set('fakeRest', new FakeEntity('1', 'Some entity'));
         $controller->set('someSerializedVar', $expectedValue);
         $controller->viewBuilder()->setOption('serialize', ['someSerializedVar']);
         $response = $controller->render();

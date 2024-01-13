@@ -52,7 +52,7 @@ class RestHandlerComponent extends Component
     {
         $defaultVarName = $this->getVarName();
 
-        $vars = $this->getController()->viewBuilder()->getOption(self::OPTION_SERIALIZE) ?? [];
+        $serializedVars = $this->getController()->viewBuilder()->getOption(self::OPTION_SERIALIZE) ?? [];
         if ($this->getController()->viewBuilder()->hasVar($defaultVarName)) {
             $responseDto = $this->getResponseDtoPath();
             if ($responseDto !== null) {
@@ -67,10 +67,12 @@ class RestHandlerComponent extends Component
                 $this->getController()->viewBuilder()->setVar($defaultVarName, $values);
             }
 
-            $vars = [$defaultVarName];
+            if (!in_array($defaultVarName, $serializedVars)) {
+                $serializedVars[] = $defaultVarName;
+            }
         }
 
-        $this->getController()->viewBuilder()->setOption(self::OPTION_SERIALIZE, $vars);
+        $this->getController()->viewBuilder()->setOption(self::OPTION_SERIALIZE, $serializedVars);
     }
 
     /**
